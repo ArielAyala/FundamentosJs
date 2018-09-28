@@ -10,12 +10,20 @@ var Dario = {
   edad: 27
 }
 
-function imprimirNombreEnMayusculas({nombre}){
-
+function imprimirNombreEnMayusculas(persona){
+  //var nombre = persona.nombre
+  var {nombre} = persona
   console.log(nombre.toUpperCase())
 }
 
 imprimirNombreEnMayusculas(Ariel)
 imprimirNombreEnMayusculas(Dario)
-imprimirNombreEnMayusculas({nombre:'Pepito'})
-imprimirNombreEnMayusculas()
+
+function cumpleaños(persona) {
+  return {
+    ...persona,
+    edad: persona.edad + 1
+  }
+}
+
+cumpleaños(Ariel)
