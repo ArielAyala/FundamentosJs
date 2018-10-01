@@ -7,22 +7,32 @@ var ariel = {
 
 console.log(`Al inicio del año ${ariel.nombre} pesa ${ariel.peso} kg`)
 
-const INCREMENTO_PESO = 0.2
-const DIA_DEL_AÑO = 365
-
 // function aumentarDePeso (persona) {
 //   return persona.peso += 200
 // }
+
+const INCREMENTO_PESO = 0.3
+const DIA_DEL_AÑO = 365
 const aumentarDePeso = (persona, incremento) =>  persona.peso += INCREMENTO_PESO
 const adelgazar = persona => persona.peso -= INCREMENTO_PESO
 
-for (var i = 1; i <= DIA_DEL_AÑO; i++) {
-  var random = Math.random()
+const comeMucho = () => Math.random() < 0.3
+const realizaDeporte = () => Math.random() < 0.4
 
-  if (random < 0.25) {
+const META = ariel.peso - 3
+
+var dias = 0
+
+while (ariel.peso > META) {
+  
+  if (comeMucho()) {
+    //aumenta de persona
     aumentarDePeso(ariel)
-  } else if (random < 0.5){
+  }
+  if (realizaDeporte()) {
     adelgazar(ariel)
   }
+  dias += 1
 }
-console.log(`Al final del año ${ariel.nombre} pesa ${ariel.peso.toFixed(1)} kg`)
+
+console.log(`Pasaron ${dias} días hasta que ${ariel.nombre} adelgazó 3 kg.`)
