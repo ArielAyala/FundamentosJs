@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Calse 36 - Var, let y const</title>
+  </head>
+  <body>
+
+    <script>
+      function diasEntreFechas(fecha1, fecha2){
+        const undDia = 1000 * 60 * 60 * 24
+        const diferencia = Math.abs(fecha1 - fecha2)
+
+
+        return Math.floor(diferencia / undDia)
+      }
+      const hoy = new Date()
+      const nacimiento = new Date(1992, 6, 7)
+    </script>
+  </body>
+</html>
